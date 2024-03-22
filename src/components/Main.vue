@@ -1,9 +1,6 @@
 <script>
 export default {
   name: "Main",
-  components: {
-    ProductCard,
-  },
   data() {
     return {
       card: [
@@ -112,21 +109,30 @@ export default {
       ],
     };
   },
+  methods: {
+    getImagePath(img) {
+      return require(`@/public/${img}`);
+    },
+  },
 };
 </script>
 
 <template>
-  <div class="card" style="width: 18rem">
-    <div class="card-body">
-      <h5 class="card-title">Card title</h5>
-      <h6 class="card-subtitle mb-2 text-body-secondary">Card subtitle</h6>
-      <p class="card-text">
-        Some quick example text to build on the card title and make up the bulk
-        of the card's content.
-      </p>
-      <a href="#" class="card-link">Card link</a>
-      <a href="#" class="card-link">Another link</a>
+  <div>
+    <div v-for="product in card" :key="product.id" class="card product-card">
+      <img
+        :src="getImagePath(product.frontImage)"
+        :alt="product.name"
+        class="card-img-top"
+      />
+      <div class="card-body">
+        <h5 class="card-title">{{ product.name }}</h5>
+        <h6 class="card-subtitle mb-2 text-muted">{{ product.brand }}</h6>
+        <p class="card-text">{{ product.price }} €</p>
+        <a href="#" class="btn btn-primary">Buy Now</a>
+      </div>
     </div>
   </div>
 </template>
+
 <style></style>
