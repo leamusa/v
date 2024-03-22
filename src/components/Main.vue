@@ -111,25 +111,99 @@ export default {
   },
   methods: {
     getImagePath(img) {
-      return require(`@/public/${img}`);
+      return require(`@/public/img/${img}`);
     },
   },
 };
 </script>
-
 <template>
   <div>
-    <div v-for="product in card" :key="product.id" class="card product-card">
-      <img
-        :src="getImagePath(product.frontImage)"
-        :alt="product.name"
-        class="card-img-top"
-      />
-      <div class="card-body">
-        <h5 class="card-title">{{ product.name }}</h5>
-        <h6 class="card-subtitle mb-2 text-muted">{{ product.brand }}</h6>
-        <p class="card-text">{{ product.price }} €</p>
-        <a href="#" class="btn btn-primary">Buy Now</a>
+    <div class="main-container">
+      <div class="img-card">
+        <a href="#">
+          <img src="/img/2.webp" alt="" class="img-main" />
+          <img src="/img/2b.webp" alt="" class="img-hover" />
+        </a>
+        <span class="discount">-30%</span>
+        <span class="heart"> &hearts;</span>
+      </div>
+      <div class="product-description">
+        <p>Guess</p>
+        <h3>ROSES TEE</h3>
+        <p>
+          <span class="price">20,99 &euro;</span>
+          <span class="ex-price">29,99 &euro;</span>
+        </p>
+      </div>
+    </div>
+
+    <div class="main-container">
+      <div class="img-card">
+        <a href="#">
+          <img src="/img/3.webp" alt="" class="img-main" />
+          <img src="/img/3.webp" alt="" class="img-hover" />
+        </a>
+        <span class="discount">-30%</span>
+        <span class="heart"> &hearts;</span>
+      </div>
+      <div class="product-description">
+        <p>Come Zucchero Filato</p>
+        <h3>VOGLIA DI COLORI PASTELLO</h3>
+        <p>
+          <span class="price">129,99 &euro;</span>
+          <span class="ex-price">184,99 &euro;</span>
+        </p>
+      </div>
+    </div>
+
+    <div class="main-container">
+      <div class="img-card">
+        <a href="#">
+          <img src="/img/4.webp" alt="" class="img-main" />
+          <img src="/img/4b.webp" alt="" class="img-hover" />
+        </a>
+        <span class="discount">-50%</span>
+        <span class="ecological">Sostenibilità</span>
+        <span class="heart"> &hearts;</span>
+      </div>
+      <div class="product-description">
+        <p>Levi's</p>
+        <h3>TEE UNISEX</h3>
+        <p>
+          <span class="price">14,99 &euro;</span>
+          <span class="ex-price">29.99 &euro;</span>
+        </p>
+      </div>
+    </div>
+
+    <div class="main-container">
+      <div class="img-card">
+        <a href="#">
+          <img src="/img/5.webp" alt="" class="img-main" />
+          <img src="/img/5b.webp" alt="" class="img-hover" />
+        </a>
+        <span class="heart"> &hearts;</span>
+      </div>
+      <div class="product-description">
+        <p>Maya Deluxe</p>
+        <h3>STRIPE BODICE</h3>
+        <p><span class="price">14,99 &euro;</span></p>
+      </div>
+    </div>
+
+    <div class="main-container">
+      <div class="img-card">
+        <a href="#">
+          <img src="/img/6.webp" alt="" class="img-main" />
+          <img src="/img/6b.webp" alt="" class="img-hover" />
+        </a>
+        <span class="ecological-no-discount">Sostenibilità</span>
+        <span class="heart"> &hearts;</span>
+      </div>
+      <div class="product-description">
+        <p>Esprit</p>
+        <h3>MAGLIONE - BLACK</h3>
+        <p><span class="price">29,99 &euro;</span></p>
       </div>
     </div>
   </div>
