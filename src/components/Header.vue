@@ -62,7 +62,7 @@ export default {
   </nav>
 </template>
 
-<style scoped>
+<style>
 .logo {
   height: 6em;
   padding: 1.5em;

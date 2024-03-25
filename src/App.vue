@@ -1,12 +1,23 @@
 <script>
 import Header from "./components/Header.vue";
 import Main from "./components/Main.vue";
+import { store } from "./store";
 export default {
-  name: "App",
+  data() {
+    return {
+      store: store,
+    };
+  },
 
   components: {
     Header,
     Main,
+  },
+
+  methods: {},
+
+  mounted() {
+    // console.log(this.store)
   },
 };
 </script>
